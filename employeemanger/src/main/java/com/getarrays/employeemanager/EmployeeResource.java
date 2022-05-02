@@ -1,4 +1,4 @@
-package com.getarrays.employeemanger;
+package com.getarrays.employeemanager;
 
 import java.util.List;
 
@@ -13,8 +13,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.getarrays.employeemanger.model.Employee;
-import com.getarrays.employeemanger.service.EmployeeService;
+import com.getarrays.employeemanager.model.Employee;
+import com.getarrays.employeemanager.service.EmployeeService;
 
 @RestController
 @RequestMapping("/employee")
@@ -26,7 +26,7 @@ public class EmployeeResource {
 	}
 	
 	@GetMapping("/all")
-	public ResponseEntity<List<Employee>> getAllEmployee() {
+	public ResponseEntity<List<Employee>> getAllEmployees() {
 		List<Employee> employees = employeeService.findAllEmployees();
 		return new ResponseEntity<>(employees, HttpStatus.OK);
 	}

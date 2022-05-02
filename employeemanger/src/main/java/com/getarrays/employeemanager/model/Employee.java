@@ -1,4 +1,4 @@
-package com.getarrays.employeemanger.model;
+package com.getarrays.employeemanager.model;
 
 import java.io.Serializable;
 
@@ -23,10 +23,13 @@ public class Employee implements Serializable {
 	@Column(nullable = false, updatable = false)	
 	private String employeeCode;
 	
-	public Employee(Long id, String name, String email, String jobTitle, String phone, String imageUrl,
-			String employeeCode) {
+	
+	public Employee() {
 		super();
-		this.id = id;
+	}
+
+	public Employee(String name, String email, String jobTitle, String phone, String imageUrl,
+			String employeeCode) {
 		this.name = name;
 		this.email = email;
 		this.jobTitle = jobTitle;

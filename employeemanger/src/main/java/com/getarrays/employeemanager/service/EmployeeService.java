@@ -1,4 +1,4 @@
-package com.getarrays.employeemanger.service;
+package com.getarrays.employeemanager.service;
 
 import java.util.List;
 import java.util.UUID;
@@ -6,9 +6,9 @@ import java.util.UUID;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.getarrays.employeemanger.exception.UserNotFoundException;
-import com.getarrays.employeemanger.model.Employee;
-import com.getarrays.employeemanger.repository.EmployeeRepository;
+import com.getarrays.employeemanager.exception.UserNotFoundException;
+import com.getarrays.employeemanager.model.Employee;
+import com.getarrays.employeemanager.repository.EmployeeRepository;
 
 @Service
 public class EmployeeService {

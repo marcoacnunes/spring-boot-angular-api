@@ -1,4 +1,4 @@
-package com.getarrays.employeemanger.exception;
+package com.getarrays.employeemanager.exception;
 
 public class UserNotFoundException extends RuntimeException {
 

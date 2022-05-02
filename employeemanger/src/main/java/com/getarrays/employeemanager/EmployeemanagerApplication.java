@@ -1,13 +1,13 @@
-package com.getarrays.employeemanger;
+package com.getarrays.employeemanager;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class EmployeemangerApplication {
+public class EmployeemanagerApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(EmployeemangerApplication.class, args);
+		SpringApplication.run(EmployeemanagerApplication.class, args);
 	}
 
 }
