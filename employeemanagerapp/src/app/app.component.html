@@ -1,94 +1,184 @@
-<div class="topnav">
-    <a class="active" href="#home">Home</a>
-    <a href="#about">About</a>
-    <a href="#contact">Contact</a>
-    <input type="text" placeholder="Search..">
-  </div>
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
 <div class="container">
-    
-            <!-- Add Contact Button  -->
-            <div class="modal fade" id="addEmployeeModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-                    <div class="modal-content">
-                        <form>
-                            <div class="modal-header px-4">
-                                <h5 class="modal-title" id="exampleModalCenterTitle">Create New Contact</h5>
-                            </div>
-                            <div class="modal-body px-4">
-                                <div class="form-group row mb-6">
-                                    <label for="coverImage" class="col-sm-4 col-lg-2 col-form-label">User Image</label>
-                                    <div class="col-sm-8 col-lg-10">
-                                        <div class="custom-file mb-1">
-                                            <input type="file" class="custom-file-input" id="coverImage" required="" />
-                                            <label class="custom-file-label" for="coverImage">Choose file...</label>
-                                            <div class="invalid-feedback">Example invalid custom file feedback</div>
-                                        </div>
-                                    </div>
-                                </div>
-    
-                                <div class="row mb-2">
-                                    <div class="col-lg-6">
-                                        <div class="form-group">
-                                            <label for="name">Name</label>
-                                            <input type="text" class="form-control" id="name" value="Albrecht" />
-                                        </div>
-                                    </div>
-    
-                                    <div class="col-lg-6">
-                                        <div class="form-group mb-4">
-                                            <label for="Occupation">Occupation</label>
-                                            <input type="text" class="form-control" id="occupation" value="01-10-1993" />
-                                        </div>
-                                    </div>
+<div class="row flex-lg-nowrap">
+  <div class="col-12 col-lg-auto mb-3" style="width: 200px;">
+   
+  </div>
 
-                                    <div class="col-lg-6">
-                                        <div class="form-group mb-4">
-                                            <label for="email">Email</label>
-                                            <input type="email" class="form-control" id="email" value="albrecht.straub@gmail.com" />
-                                        </div>
-                                    </div>
-    
-                                    <div class="col-lg-6">
-                                        <div class="form-group mb-4">
-                                            <label for="phone">Phone</label>
-                                            <input type="text" class="form-control" id="phone" value="Some value for event" />
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="modal-footer px-4">
-                                <button type="button" class="btn btn-smoke btn-pill" data-dismiss="modal">Cancel</button>
-                                <button type="button" class="btn btn-primary btn-pill">Save Contact</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
+  <div *ngFor="let employee of employees" class="col">
+    <div class="e-tabs mb-3 px-3">
+      <ul class="nav nav-tabs">
+        <li class="nav-item"><a class="nav-link active" href="#">Users</a></li>
+      </ul>
+    </div>
 
-    <div class="row">
-        <div *ngFor="let employee of employees" class="col-md-6 col-xl-3">
-            <div class="card m-b-30">
-                <div class="card-body row">
-                    <div class="col-6">
-                        <a href=""><img src="{{employee?.imageUrl}}" alt="" class="img-fluid rounded-circle w-60"></a>
-                    </div>
-                    <div class="col-6 card-title align-self-center mb-0">
-                        <h5>{{employee?.name}}</h5>
-                        <p class="m-0">{{employee?.jobTitle}}</p>
-                    </div>
-                </div>
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item"><i class="fa fa-envelope float-right"></i>Email : <a href="#">{{employee?.email}}</a></li>
-                    <li class="list-group-item"><i class="fa fa-phone float-right"></i>Phone : {{employee?.phone}}</li>
-                </ul>
-                <div class="card-body">
-                    <div class="float-right btn-group btn-group-sm">
-                        <a href="#" class="btn btn-primary tooltips" data-placement="top" data-toggle="tooltip" data-original-title="Edit"><i class="fa fa-pencil"></i> </a>
-                        <a href="#" class="btn btn-secondary tooltips" data-placement="top" data-toggle="tooltip" data-original-title="Delete"><i class="fa fa-times"></i></a>
-                    </div>
-                </div>
+    <div class="row flex-lg-nowrap">
+      <div class="col mb-3">
+        <div class="e-panel card">
+          <div class="card-body">
+            <div class="card-title">
+              <h6 class="mr-2"><span>Employees</span><small class="px-1"></small></h6>
             </div>
+            <div class="e-table">
+              <div class="table-responsive table-lg mt-3">
+                <table class="table table-bordered">
+                  <thead>
+                    <tr>
+                      <th>Photo</th>
+                      <th class="max-width">Name</th>
+                      <th class="sortable">Occupation</th>
+                      <th>Phone</th>
+                      <th>Actions</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="align-middle text-center">
+                        <img src={{employee?.imageUrl}} alt="employee image" width="90" height="70">
+                      </td>
+                      <td class="text-nowrap align-middle">{{employee?.name}}</td>
+                      <td class="text-nowrap align-middle"><span>{{employee?.jobTitle}}</span></td>
+                      <td class="text-center align-middle">{{employee?.phone}}</td>
+                      <td class="text-center align-middle">
+                        <div class="btn-group align-top">
+                            <button class="btn btn-sm btn-outline-secondary badge" type="button" data-toggle="modal" data-target="#user-form-modal">Edit</button>
+                            <button class="btn btn-sm btn-outline-secondary badge" type="button"><i class="fa fa-trash"></i></button>
+                        </div>
+                      </td>
+                    </tr>
+
+                  </tbody>
+                </table>
+              </div>
+             
+            </div>
+          </div>
         </div>
+      </div>
+      <div class="col-12 col-lg-3 mb-3">
+        <div class="card">
+          <div class="card-body">
+            <div class="text-center px-xl-3">
+              <button class="btn btn-success btn-block" type="button" data-toggle="modal" data-target="#user-form-modal">New User</button>
+
+              <div class="form-group">
+                <label>Search by Name:</label>
+                <div><input class="form-control w-100" type="text" placeholder="Name" value=""></div>
+              </div>
+            
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- addModal -->
+    <div class="modal fade" role="dialog" tabindex="-1" id="user-form-modal">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Create User</h5>
+            <button type="button" class="close" data-dismiss="modal">
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="py-1">
+              <form class="form" novalidate="">
+                <div class="row">
+                  <div class="col">
+                    <div class="row">
+                      <div class="col">
+                        <div class="form-group">
+                          <label>Full Name</label>
+                          <input class="form-control" type="text" name="name" placeholder="John Smith" value="John Smith">
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="form-group">
+                          <label>Username</label>
+                          <input class="form-control" type="text" name="username" placeholder="johnny.s" value="johnny.s">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col">
+                        <div class="form-group">
+                          <label>Email</label>
+                          <input class="form-control" type="text" placeholder="user@example.com">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col mb-3">
+                        <div class="form-group">
+                          <label>About</label>
+                          <textarea class="form-control" rows="5" placeholder="My Bio"></textarea>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-12 col-sm-6 mb-3">
+                    <div class="mb-2"><b>Change Password</b></div>
+                    <div class="row">
+                      <div class="col">
+                        <div class="form-group">
+                          <label>Current Password</label>
+                          <input class="form-control" type="password" placeholder="••••••">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col">
+                        <div class="form-group">
+                          <label>New Password</label>
+                          <input class="form-control" type="password" placeholder="••••••">
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="form-group">
+                          <label>Confirm <span class="d-none d-xl-inline">Password</span></label>
+                          <input class="form-control" type="password" placeholder="••••••"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-12 col-sm-5 offset-sm-1 mb-3">
+                    <div class="mb-2"><b>Keeping in Touch</b></div>
+                    <div class="row">
+                      <div class="col">
+                        <label>Email Notifications</label>
+                        <div class="custom-controls-stacked px-2">
+                          <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="notifications-blog" checked="">
+                            <label class="custom-control-label" for="notifications-blog">Blog posts</label>
+                          </div>
+                          <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="notifications-news" checked="">
+                            <label class="custom-control-label" for="notifications-news">Newsletter</label>
+                          </div>
+                          <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="notifications-offers" checked="">
+                            <label class="custom-control-label" for="notifications-offers">Personal Offers</label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col d-flex justify-content-end">
+                    <button class="btn btn-primary" type="submit">Save Changes</button>
+                  </div>
+                </div>
+              </form>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 </div>
