@@ -1,7 +1,7 @@
 import { EmployeeService } from './employee.service';
 import { Component, OnInit } from "@angular/core"
-import { Employee } from './employee';
 import { HttpErrorResponse } from '@angular/common/http';
+import { Employee } from './models/Employee';
 
 @Component({
   selector: 'app-root',
