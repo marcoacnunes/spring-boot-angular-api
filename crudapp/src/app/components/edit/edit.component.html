@@ -1,0 +1,27 @@
+<div class="container col-md-6">
+    <div class="card">
+        <div class="card-header">
+            <h3>Edit Employee</h3>
+        </div>
+        <div class="card-body">
+           <div action="form-group">
+               <label for="">Name:</label>
+               <input type="text" class="form-control" [(ngModel)]="employee.name" name="name">
+           </div>
+           <div action="form-group">
+                <label for="">Occupation:</label>
+                <input  type="text" class="form-control" [(ngModel)]="employee.jobTitle" name="jobTitle">
+            </div>
+            <div action="form-group">
+                <label for="">Email:</label>
+                <input  type="text" class="form-control" [(ngModel)]="employee.email" name="email">
+            </div>
+            <div action="form-group">
+                <label  for="">Phone:</label>
+                <input  type="text" class="form-control" [(ngModel)]="employee.phone" name="phone">
+             </div>
+        <button (click)="Update(employee)" class="btn btn-danger">Edit</button>
+        
+    </div>
+    </div>
+</div>

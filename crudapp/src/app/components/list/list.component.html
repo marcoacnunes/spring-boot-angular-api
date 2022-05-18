@@ -1,0 +1,49 @@
+<div *ngFor="let employee of employees" class="container">
+    <div class="e-tabs mb-3 px-3">
+        <ul class="nav nav-tabs">
+          <li class="nav-item"><a class="nav-link active" href="#">Users</a></li>
+        </ul>
+      </div>
+  
+      <div class="row flex-lg-nowrap">
+        <div class="col mb-3">
+          <div class="e-panel card">
+            <div class="card-body">
+              <div class="card-title">
+                <h6 class="mr-2"><span>Employees</span><small class="px-1"></small></h6>
+              </div>
+              <div class="e-table">
+                <div class="table-responsive table-lg mt-3">
+                  <table class="table table-bordered">
+                    <thead>
+                      <tr>
+                          <th>ID</th>
+                        <th class="max-width">Name</th>
+                        <th class="sortable">Occupation</th>
+                        <th>Phone</th>
+                        <th>Actions</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                          <td>{{employee?.id}}</td>
+                        <td class="text-nowrap align-middle">{{employee?.name}}</td>
+                        <td class="text-nowrap align-middle"><span>{{employee?.jobTitle}}</span></td>
+                        <td class="text-center align-middle">{{employee?.phone}}</td>
+                        <td class="text-center align-middle">
+                          <div class="btn-group align-top">
+                              <button (click)="Edit(employee)" class="btn btn-sm btn-outline-secondary badge" type="button" data-toggle="modal" data-target="#user-form-modal">Edit</button>
+                              <button class="btn btn-sm btn-outline-secondary badge" type="button"><i class="fa fa-trash"></i>Delete</button>
+                          </div>
+                        </td>
+                      </tr>
+  
+                    </tbody>
+                  </table>
+                </div>
+               
+              </div>
+            </div>
+          </div>
+        </div>
+</div>
