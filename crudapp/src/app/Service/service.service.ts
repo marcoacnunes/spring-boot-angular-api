@@ -24,16 +24,16 @@ export class ServiceService {
     return this.http.post<Employee>(this.AddEmployee, employee);
   }
 
-  getEmployeeId(id:number){
+  getEmployeeId(id:String){
     return this.http.get<Employee>(this.EmployeeId + "/" + id);
   }
 
   updateEmployee(employee:Employee){
-    return this.http.put<Employee>(this.UpdateEmployee + "/" + employee.id, employee);
+    return this.http.put<Employee>(this.UpdateEmployee, employee);
   }
 
-  /* deleteEmployee(){
-    return this.http.delete<Employee.id>(this.DeleteEmployee, employee.id);
-  } */
+  deleteEmployee(id:Number){
+    this.http.delete<Employee>(this.DeleteEmployee + "/" + id);
+  }
 
 }

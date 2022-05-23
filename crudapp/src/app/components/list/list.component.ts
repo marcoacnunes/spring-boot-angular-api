@@ -24,4 +24,11 @@ export class ListComponent implements OnInit {
     localStorage.setItem("id", employee.id.toString());
     this.router.navigate(["edit"]);
   }
-}
+
+  Delete(employee:Employee): void{
+    this.service.deleteEmployee(employee.id)
+      alert("Employee deleted successfully!");
+      this.router.navigate(["list"]);
+    }
+  }
+

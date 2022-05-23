@@ -20,7 +20,10 @@ export class EditComponent implements OnInit {
 
   Edit() {
    let id = localStorage.getItem("id");
-    this.service.getEmployeeId(+id)
+   if(id === null) {
+     id = "";
+   }
+    this.service.getEmployeeId(id)
     .subscribe(data=>{
       this.employee = data;
      })
