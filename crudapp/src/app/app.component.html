@@ -1,6 +1,8 @@
-<div class="container">
-  <button (click)="List()" class="btn btn-info">List</button>
-  <button (click)="Add()" style="margin-left:10px">Add</button>
-</div>
+  <app-header></app-header>
+  <button (click)="Add()" class="btn-add">Add</button>
+  <div class="container">
+    <!--  <button (click)="List()" class="btn-list">List</button> -->
+    <router-outlet></router-outlet>
+  </div>
+  
 
-<router-outlet></router-outlet>

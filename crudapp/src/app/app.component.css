@@ -1,0 +1,17 @@
+
+.btn-add {
+    box-shadow: 1px 1px #888888;
+    border-radius: 20em;
+    color: rgb(255, 255, 255);
+    background: transparent;
+    border: 1px solid rgb(228, 228, 228);
+    font-size: 17px;
+    font-synthesis: style;
+    padding: 7px 12px;
+    border-style: groove;
+    font-family: 'Open Sans', sans-serif;
+    min-width: 90px;
+    margin: auto;
+    display: flex;
+    display: grid;
+}

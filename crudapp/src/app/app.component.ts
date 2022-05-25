@@ -11,11 +11,15 @@ export class AppComponent {
 
   constructor(private router: Router){}
 
-  List(){
+/*   List(){
     this.router.navigate(["list"]);
-  }
+  } */
 
   Add(){
     this.router.navigate(["add"]);
+  }
+
+  getUrl(){
+  return "url('https://wallpapersfortech.com/wp-content/uploads/2021/03/Aesthetic-Minimalist-Background.png')";
   }
 }

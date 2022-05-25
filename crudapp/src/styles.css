@@ -3,6 +3,7 @@
 @import 'http://stackpath.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css';
 
 body {
-    background-image: url("https://images.wallpapersden.com/image/download/neon-gradient-minimalist_bGVlZmaUmZqaraWkpJRobWllrWdma2U.jpg");
-    margin-top:20px;
+    background-image: url("https://i.gifer.com/8G2D.gif");
+    height:40em; background-size:cover; width:auto;
+    background-position:50% 50%;
 }

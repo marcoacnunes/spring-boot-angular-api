@@ -8,6 +8,7 @@ import { ListComponent } from './components/list/list.component';
 import { FormsModule } from '@angular/forms';
 import { ServiceService } from './Service/service.service';
 import { HttpClientModule } from '@angular/common/http';
+import { HeaderComponent } from './components/header/header.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { HttpClientModule } from '@angular/common/http';
     ListComponent,
     AddComponent,
     EditComponent,
+    HeaderComponent,
   ],
   imports: [
     BrowserModule,
