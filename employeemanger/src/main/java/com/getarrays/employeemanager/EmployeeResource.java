@@ -2,6 +2,8 @@ package com.getarrays.employeemanager;
 
 import java.util.List;
 
+import javax.transaction.Transactional;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -16,6 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.getarrays.employeemanager.model.Employee;
 import com.getarrays.employeemanager.service.EmployeeService;
+@Transactional
 @CrossOrigin(origins = "http://localhost:4200", maxAge = 3600)
 @RestController
 @RequestMapping("/employee")
@@ -49,6 +52,7 @@ public class EmployeeResource {
 		Employee newEmployee = employeeService.updateEmployee(employee);
 		return new ResponseEntity<>(newEmployee, HttpStatus.OK);
 	}
+	
 	
 	@DeleteMapping ("/delete/{id}")
 	public ResponseEntity<?> deleteEmployee(@PathVariable("id") Long id) {

@@ -25,10 +25,12 @@ export class ListComponent implements OnInit {
     this.router.navigate(["edit"]);
   }
 
-  Delete(employee:Employee): void{
+  Delete(employee:Employee){
     this.service.deleteEmployee(employee.id)
+    .subscribe(data=>{
+      this.employees=this.employees.filter(p=>p!==employee);
+    
       alert("Employee deleted successfully!");
       this.router.navigate(["list"]);
-    }
-  }
-
+    })
+  }}

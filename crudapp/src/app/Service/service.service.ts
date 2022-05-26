@@ -33,7 +33,7 @@ export class ServiceService {
   }
 
   deleteEmployee(id:Number){
-    this.http.delete<Employee>(this.DeleteEmployee + "/" + id);
+    return this.http.delete<Employee>(this.DeleteEmployee + "/" + id);
   }
 
 }
