@@ -34,18 +34,24 @@ body {
     -moz-box-shadow: 0 0 3px grey;
     -webkit-box-shadow: 0 0 3px grey;
     box-shadow: 0 0 5px grey;
+    
   }
   
   span {
     flex-basis: 33.333%;
   }
-  
+
   a {
     text-decoration: none;
     color: #4c4c4c;
   }
 
-  el {
-      color: white;
-  }
+th {
+  color: #eefbfb;
+  border-right-width:medium;
+  border-right-color:#000;
+  border-right-style:groove;
+}
+
+
 

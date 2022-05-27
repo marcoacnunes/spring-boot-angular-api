@@ -1,5 +1,5 @@
 
-<h6 class="mr-2"><span>Employees List</span><small class="el"></small></h6>
+
 <div className="policy-container">
   <div className="policy-table">
     <table class="table">
@@ -9,6 +9,8 @@
           <th class="max-width">Name</th>
           <th class="sortable">Occupation</th>
           <th>Phone</th>
+          <th>Email</th>
+
           <th>Actions</th>
         </tr>
       </thead>
@@ -16,8 +18,8 @@
   
       <div class="policy" *ngFor="let employee of employees">
         <span>{{employee?.id}}</span>
-        <span>{{employee?.name}}</span>
-        <span>{{employee?.jobTitle}}</span>
+        <span class="name">{{employee?.name}}</span>
+        <span class="occupation">{{employee?.jobTitle}}</span>
         <span>{{employee?.phone}}</span>
         <span>{{employee?.email}}</span>
       
